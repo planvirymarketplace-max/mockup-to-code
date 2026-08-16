@@ -133,7 +133,7 @@ const SCREEN_ROUTES = [
   { to: "/messages", label: "09 Messages" },
   { to: "/album", label: "10 Album" },
   { to: "/settings", label: "11 Settings" },
-  { to: "/dashboard", label: "12 Dashboard" },
+  { to: "/notifications", label: "12 Notifications" },
 ] as const;
 
 function ScreenSwitcher() {
