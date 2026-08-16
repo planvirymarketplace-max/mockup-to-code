@@ -11,12 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AlbumRouteImport } from './routes/album'
-import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as FeedRouteImport } from './routes/feed'
 import { Route as LiveRouteImport } from './routes/live'
 import { Route as MessagesRouteImport } from './routes/messages'
+import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudioRouteImport } from './routes/studio'
@@ -30,11 +30,6 @@ const IndexRoute = IndexRouteImport.update({
 const AlbumRoute = AlbumRouteImport.update({
   id: '/album',
   path: '/album',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsRoute = EventsRouteImport.update({
@@ -62,6 +57,11 @@ const MessagesRoute = MessagesRouteImport.update({
   path: '/messages',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
@@ -86,12 +86,12 @@ const TrackRoute = TrackRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/album': typeof AlbumRoute
-  '/dashboard': typeof DashboardRoute
   '/events': typeof EventsRoute
   '/explore': typeof ExploreRoute
   '/feed': typeof FeedRoute
   '/live': typeof LiveRoute
   '/messages': typeof MessagesRoute
+  '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/settings': typeof SettingsRoute
   '/studio': typeof StudioRoute
@@ -100,12 +100,12 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/album': typeof AlbumRoute
-  '/dashboard': typeof DashboardRoute
   '/events': typeof EventsRoute
   '/explore': typeof ExploreRoute
   '/feed': typeof FeedRoute
   '/live': typeof LiveRoute
   '/messages': typeof MessagesRoute
+  '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/settings': typeof SettingsRoute
   '/studio': typeof StudioRoute
@@ -115,12 +115,12 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/album': typeof AlbumRoute
-  '/dashboard': typeof DashboardRoute
   '/events': typeof EventsRoute
   '/explore': typeof ExploreRoute
   '/feed': typeof FeedRoute
   '/live': typeof LiveRoute
   '/messages': typeof MessagesRoute
+  '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/settings': typeof SettingsRoute
   '/studio': typeof StudioRoute
@@ -131,12 +131,12 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/album'
-    | '/dashboard'
     | '/events'
     | '/explore'
     | '/feed'
     | '/live'
     | '/messages'
+    | '/notifications'
     | '/profile'
     | '/settings'
     | '/studio'
@@ -145,12 +145,12 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/album'
-    | '/dashboard'
     | '/events'
     | '/explore'
     | '/feed'
     | '/live'
     | '/messages'
+    | '/notifications'
     | '/profile'
     | '/settings'
     | '/studio'
@@ -159,12 +159,12 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/album'
-    | '/dashboard'
     | '/events'
     | '/explore'
     | '/feed'
     | '/live'
     | '/messages'
+    | '/notifications'
     | '/profile'
     | '/settings'
     | '/studio'
@@ -174,12 +174,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AlbumRoute: typeof AlbumRoute
-  DashboardRoute: typeof DashboardRoute
   EventsRoute: typeof EventsRoute
   ExploreRoute: typeof ExploreRoute
   FeedRoute: typeof FeedRoute
   LiveRoute: typeof LiveRoute
   MessagesRoute: typeof MessagesRoute
+  NotificationsRoute: typeof NotificationsRoute
   ProfileRoute: typeof ProfileRoute
   SettingsRoute: typeof SettingsRoute
   StudioRoute: typeof StudioRoute
@@ -200,13 +200,6 @@ declare module '@tanstack/react-router' {
       path: '/album'
       fullPath: '/album'
       preLoaderRoute: typeof AlbumRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/events': {
@@ -244,6 +237,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MessagesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/profile': {
       id: '/profile'
       path: '/profile'
@@ -278,12 +278,12 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AlbumRoute: AlbumRoute,
-  DashboardRoute: DashboardRoute,
   EventsRoute: EventsRoute,
   ExploreRoute: ExploreRoute,
   FeedRoute: FeedRoute,
   LiveRoute: LiveRoute,
   MessagesRoute: MessagesRoute,
+  NotificationsRoute: NotificationsRoute,
   ProfileRoute: ProfileRoute,
   SettingsRoute: SettingsRoute,
   StudioRoute: StudioRoute,
