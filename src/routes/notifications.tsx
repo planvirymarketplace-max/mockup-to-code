@@ -3,9 +3,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/notifications")({
   head: () => ({
     meta: [
-      { title: "Dashboard \u2014 ORBIT" },
+      { title: "Notifications \u2014 ORBIT" },
       { name: "description", content: "Timeline of mentions, system alerts and activity on ORBIT." },
-      { property: "og:title", content: "Dashboard \u2014 ORBIT" },
+      { property: "og:title", content: "Notifications \u2014 ORBIT" },
       { property: "og:description", content: "Timeline of mentions, system alerts and activity on ORBIT." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
