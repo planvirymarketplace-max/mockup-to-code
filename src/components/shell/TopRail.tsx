@@ -3,7 +3,7 @@ import { useShell } from "../../state/app-shell";
 import { Icon } from "../ui-kit";
 import { CONVERSATIONS, NOTIFICATIONS } from "../../data/demo";
 
-const PRIMARY: { to: LinkProps["to"]; label: string; icon: string }[] = [
+const PRIMARY: { to: NonNullable<LinkProps["to"]>; label: string; icon: string }[] = [
   { to: "/", label: "Home", icon: "home" },
   { to: "/create", label: "Create", icon: "add_circle" },
   { to: "/scroll", label: "Scroll", icon: "swipe_vertical" },

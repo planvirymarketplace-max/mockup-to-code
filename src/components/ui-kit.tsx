@@ -251,7 +251,7 @@ export function TileLink({
   label,
   hint,
 }: {
-  to: LinkProps["to"];
+  to: NonNullable<LinkProps["to"]>;
   icon: string;
   label: string;
   hint: string;
