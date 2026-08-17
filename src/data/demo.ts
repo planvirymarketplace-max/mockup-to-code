@@ -66,9 +66,9 @@ export const EVENTS = [
 ];
 
 export const POSTS = [
-  { objectId: "po1", author: "Ava Mirren", handle: "avamirren", avatar: art("ava"), body: "Mixed the outro three times tonight. The third one keeps the room noise in.", media: TRACKS[0], loves: 231, notes: 18, ago: "12m" },
-  { objectId: "po2", author: "Kobo Lane", handle: "kobolane", avatar: art("kobo"), body: "Going live in 20 with the modular rack. Bring requests.", media: LIVE_NOW[0], loves: 88, notes: 41, ago: "1h" },
-  { objectId: "po3", author: "Marta Quinn", handle: "martaquinn", avatar: art("marta"), body: "New single is up. Vocals recorded in one pass, no comping.", media: TRACKS[5], loves: 604, notes: 73, ago: "4h" },
+  { objectId: "po1", author: "Ava Mirren", handle: "avamirren", avatar: art("ava"), body: "Mixed the outro three times tonight. The third one keeps the room noise in.", media: TRACKS[0]!, loves: 231, notes: 18, ago: "12m" },
+  { objectId: "po2", author: "Kobo Lane", handle: "kobolane", avatar: art("kobo"), body: "Going live in 20 with the modular rack. Bring requests.", media: LIVE_NOW[0]!, loves: 88, notes: 41, ago: "1h" },
+  { objectId: "po3", author: "Marta Quinn", handle: "martaquinn", avatar: art("marta"), body: "New single is up. Vocals recorded in one pass, no comping.", media: TRACKS[5]!, loves: 604, notes: 73, ago: "4h" },
 ];
 
 export const CONVERSATIONS = [
