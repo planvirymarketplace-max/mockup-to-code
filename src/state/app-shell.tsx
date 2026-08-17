@@ -9,6 +9,8 @@ import {
 import type { MediaObject } from "../data/demo";
 import { TRACKS } from "../data/demo";
 
+const FIRST = TRACKS[0]!;
+
 export type RailPanel =
   | "notes"
   | "queue"
@@ -66,8 +68,8 @@ interface ShellState {
 const ShellContext = createContext<ShellState | null>(null);
 
 export function AppShellProvider({ children }: { children: ReactNode }) {
-  const [active, setActive] = useState<MediaObject>(TRACKS[0]);
-  const [focused, setFocused] = useState<MediaObject>(TRACKS[0]);
+  const [active, setActive] = useState<MediaObject>(FIRST);
+  const [focused, setFocused] = useState<MediaObject>(FIRST);
   const [isPlaying, setIsPlaying] = useState(false);
   const [position, setPosition] = useState(72);
   const [queue, setQueue] = useState<MediaObject[]>(TRACKS.slice(1, 5));
@@ -99,15 +101,13 @@ export function AppShellProvider({ children }: { children: ReactNode }) {
 
   const next = useCallback(() => {
     setQueue((q) => {
-      if (q.length === 0) return q;
-      const [head, ...rest] = q;
-      setActive((prev) => {
-        setFocused(head);
-        return head ? head : prev;
-      });
+      const head = q[0];
+      if (!head) return q;
+      setActive(head);
+      setFocused(head);
       setPosition(0);
       setIsPlaying(true);
-      return rest;
+      return q.slice(1);
     });
   }, []);
 
