@@ -121,43 +121,6 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-const SCREEN_ROUTES = [
-  { to: "/", label: "01 Now Playing" },
-  { to: "/feed", label: "02 Feed" },
-  { to: "/live", label: "03 Live" },
-  { to: "/track", label: "04 Track" },
-  { to: "/profile", label: "05 Profile" },
-  { to: "/studio", label: "06 Studio" },
-  { to: "/events", label: "07 Events" },
-  { to: "/explore", label: "08 Explore" },
-  { to: "/messages", label: "09 Messages" },
-  { to: "/album", label: "10 Album" },
-  { to: "/settings", label: "11 Settings" },
-  { to: "/notifications", label: "12 Notifications" },
-] as const;
-
-function ScreenSwitcher() {
-  return (
-    <details className="fixed bottom-24 right-4 z-[200] md:bottom-4">
-      <summary className="cursor-pointer list-none rounded-lg border border-surface-container-highest bg-surface-container px-3 py-2 font-mono-data text-mono-data text-on-surface-variant">
-        SCREENS
-      </summary>
-      <nav className="mt-2 flex w-48 flex-col overflow-hidden rounded-lg border border-surface-container-highest bg-surface-container-low">
-        {SCREEN_ROUTES.map((s) => (
-          <Link
-            key={s.to}
-            to={s.to}
-            className="px-3 py-2 font-mono-data text-mono-data text-on-surface hover:bg-surface-container-high"
-            activeProps={{ className: "text-primary-container" }}
-          >
-            {s.label}
-          </Link>
-        ))}
-      </nav>
-    </details>
-  );
-}
-
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -165,7 +128,6 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <ScreenSwitcher />
     </QueryClientProvider>
 
   );
