@@ -9,7 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as ShellRouteImport } from './routes/_shell'
+import { Route as ShellIndexRouteImport } from './routes/_shell.index'
+import { Route as ShellCreateRouteImport } from './routes/_shell.create'
+import { Route as ShellDiscoverRouteImport } from './routes/_shell.discover'
+import { Route as ShellLibraryRouteImport } from './routes/_shell.library'
+import { Route as ShellListenRouteImport } from './routes/_shell.listen'
+import { Route as ShellLiveRouteImport } from './routes/_shell.live'
+import { Route as ShellMessagesRouteImport } from './routes/_shell.messages'
+import { Route as ShellMoreRouteImport } from './routes/_shell.more'
+import { Route as ShellNotificationsRouteImport } from './routes/_shell.notifications'
+import { Route as ShellProfileRouteImport } from './routes/_shell.profile'
+import { Route as ShellScrollRouteImport } from './routes/_shell.scroll'
+import { Route as ShellSearchRouteImport } from './routes/_shell.search'
 import { Route as MockupAlbumRouteImport } from './routes/mockup.album'
 import { Route as MockupEventsRouteImport } from './routes/mockup.events'
 import { Route as MockupExploreRouteImport } from './routes/mockup.explore'
@@ -22,11 +34,71 @@ import { Route as MockupProfileRouteImport } from './routes/mockup.profile'
 import { Route as MockupSettingsRouteImport } from './routes/mockup.settings'
 import { Route as MockupStudioRouteImport } from './routes/mockup.studio'
 import { Route as MockupTrackRouteImport } from './routes/mockup.track'
+import { Route as ShellMusicSlugRouteImport } from './routes/_shell.music.$slug'
 
-const IndexRoute = IndexRouteImport.update({
+const ShellRoute = ShellRouteImport.update({
+  id: '/_shell',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShellIndexRoute = ShellIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellCreateRoute = ShellCreateRouteImport.update({
+  id: '/create',
+  path: '/create',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellDiscoverRoute = ShellDiscoverRouteImport.update({
+  id: '/discover',
+  path: '/discover',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellLibraryRoute = ShellLibraryRouteImport.update({
+  id: '/library',
+  path: '/library',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellListenRoute = ShellListenRouteImport.update({
+  id: '/listen',
+  path: '/listen',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellLiveRoute = ShellLiveRouteImport.update({
+  id: '/live',
+  path: '/live',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellMessagesRoute = ShellMessagesRouteImport.update({
+  id: '/messages',
+  path: '/messages',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellMoreRoute = ShellMoreRouteImport.update({
+  id: '/more',
+  path: '/more',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellNotificationsRoute = ShellNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellProfileRoute = ShellProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellScrollRoute = ShellScrollRouteImport.update({
+  id: '/scroll',
+  path: '/scroll',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellSearchRoute = ShellSearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => ShellRoute,
 } as any)
 const MockupAlbumRoute = MockupAlbumRouteImport.update({
   id: '/mockup/album',
@@ -88,9 +160,25 @@ const MockupTrackRoute = MockupTrackRouteImport.update({
   path: '/mockup/track',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShellMusicSlugRoute = ShellMusicSlugRouteImport.update({
+  id: '/music/$slug',
+  path: '/music/$slug',
+  getParentRoute: () => ShellRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof ShellIndexRoute
+  '/create': typeof ShellCreateRoute
+  '/discover': typeof ShellDiscoverRoute
+  '/library': typeof ShellLibraryRoute
+  '/listen': typeof ShellListenRoute
+  '/live': typeof ShellLiveRoute
+  '/messages': typeof ShellMessagesRoute
+  '/more': typeof ShellMoreRoute
+  '/notifications': typeof ShellNotificationsRoute
+  '/profile': typeof ShellProfileRoute
+  '/scroll': typeof ShellScrollRoute
+  '/search': typeof ShellSearchRoute
   '/mockup/album': typeof MockupAlbumRoute
   '/mockup/events': typeof MockupEventsRoute
   '/mockup/explore': typeof MockupExploreRoute
@@ -103,9 +191,20 @@ export interface FileRoutesByFullPath {
   '/mockup/settings': typeof MockupSettingsRoute
   '/mockup/studio': typeof MockupStudioRoute
   '/mockup/track': typeof MockupTrackRoute
+  '/music/$slug': typeof ShellMusicSlugRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/create': typeof ShellCreateRoute
+  '/discover': typeof ShellDiscoverRoute
+  '/library': typeof ShellLibraryRoute
+  '/listen': typeof ShellListenRoute
+  '/live': typeof ShellLiveRoute
+  '/messages': typeof ShellMessagesRoute
+  '/more': typeof ShellMoreRoute
+  '/notifications': typeof ShellNotificationsRoute
+  '/profile': typeof ShellProfileRoute
+  '/scroll': typeof ShellScrollRoute
+  '/search': typeof ShellSearchRoute
   '/mockup/album': typeof MockupAlbumRoute
   '/mockup/events': typeof MockupEventsRoute
   '/mockup/explore': typeof MockupExploreRoute
@@ -118,10 +217,23 @@ export interface FileRoutesByTo {
   '/mockup/settings': typeof MockupSettingsRoute
   '/mockup/studio': typeof MockupStudioRoute
   '/mockup/track': typeof MockupTrackRoute
+  '/': typeof ShellIndexRoute
+  '/music/$slug': typeof ShellMusicSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/_shell': typeof ShellRouteWithChildren
+  '/_shell/create': typeof ShellCreateRoute
+  '/_shell/discover': typeof ShellDiscoverRoute
+  '/_shell/library': typeof ShellLibraryRoute
+  '/_shell/listen': typeof ShellListenRoute
+  '/_shell/live': typeof ShellLiveRoute
+  '/_shell/messages': typeof ShellMessagesRoute
+  '/_shell/more': typeof ShellMoreRoute
+  '/_shell/notifications': typeof ShellNotificationsRoute
+  '/_shell/profile': typeof ShellProfileRoute
+  '/_shell/scroll': typeof ShellScrollRoute
+  '/_shell/search': typeof ShellSearchRoute
   '/mockup/album': typeof MockupAlbumRoute
   '/mockup/events': typeof MockupEventsRoute
   '/mockup/explore': typeof MockupExploreRoute
@@ -134,11 +246,24 @@ export interface FileRoutesById {
   '/mockup/settings': typeof MockupSettingsRoute
   '/mockup/studio': typeof MockupStudioRoute
   '/mockup/track': typeof MockupTrackRoute
+  '/_shell/': typeof ShellIndexRoute
+  '/_shell/music/$slug': typeof ShellMusicSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/create'
+    | '/discover'
+    | '/library'
+    | '/listen'
+    | '/live'
+    | '/messages'
+    | '/more'
+    | '/notifications'
+    | '/profile'
+    | '/scroll'
+    | '/search'
     | '/mockup/album'
     | '/mockup/events'
     | '/mockup/explore'
@@ -151,9 +276,20 @@ export interface FileRouteTypes {
     | '/mockup/settings'
     | '/mockup/studio'
     | '/mockup/track'
+    | '/music/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
+    | '/create'
+    | '/discover'
+    | '/library'
+    | '/listen'
+    | '/live'
+    | '/messages'
+    | '/more'
+    | '/notifications'
+    | '/profile'
+    | '/scroll'
+    | '/search'
     | '/mockup/album'
     | '/mockup/events'
     | '/mockup/explore'
@@ -166,9 +302,22 @@ export interface FileRouteTypes {
     | '/mockup/settings'
     | '/mockup/studio'
     | '/mockup/track'
+    | '/'
+    | '/music/$slug'
   id:
     | '__root__'
-    | '/'
+    | '/_shell'
+    | '/_shell/create'
+    | '/_shell/discover'
+    | '/_shell/library'
+    | '/_shell/listen'
+    | '/_shell/live'
+    | '/_shell/messages'
+    | '/_shell/more'
+    | '/_shell/notifications'
+    | '/_shell/profile'
+    | '/_shell/scroll'
+    | '/_shell/search'
     | '/mockup/album'
     | '/mockup/events'
     | '/mockup/explore'
@@ -181,10 +330,12 @@ export interface FileRouteTypes {
     | '/mockup/settings'
     | '/mockup/studio'
     | '/mockup/track'
+    | '/_shell/'
+    | '/_shell/music/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  ShellRoute: typeof ShellRouteWithChildren
   MockupAlbumRoute: typeof MockupAlbumRoute
   MockupEventsRoute: typeof MockupEventsRoute
   MockupExploreRoute: typeof MockupExploreRoute
@@ -201,12 +352,96 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/_shell': {
+      id: '/_shell'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof ShellRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_shell/': {
+      id: '/_shell/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ShellIndexRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/create': {
+      id: '/_shell/create'
+      path: '/create'
+      fullPath: '/create'
+      preLoaderRoute: typeof ShellCreateRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/discover': {
+      id: '/_shell/discover'
+      path: '/discover'
+      fullPath: '/discover'
+      preLoaderRoute: typeof ShellDiscoverRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/library': {
+      id: '/_shell/library'
+      path: '/library'
+      fullPath: '/library'
+      preLoaderRoute: typeof ShellLibraryRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/listen': {
+      id: '/_shell/listen'
+      path: '/listen'
+      fullPath: '/listen'
+      preLoaderRoute: typeof ShellListenRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/live': {
+      id: '/_shell/live'
+      path: '/live'
+      fullPath: '/live'
+      preLoaderRoute: typeof ShellLiveRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/messages': {
+      id: '/_shell/messages'
+      path: '/messages'
+      fullPath: '/messages'
+      preLoaderRoute: typeof ShellMessagesRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/more': {
+      id: '/_shell/more'
+      path: '/more'
+      fullPath: '/more'
+      preLoaderRoute: typeof ShellMoreRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/notifications': {
+      id: '/_shell/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof ShellNotificationsRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/profile': {
+      id: '/_shell/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ShellProfileRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/scroll': {
+      id: '/_shell/scroll'
+      path: '/scroll'
+      fullPath: '/scroll'
+      preLoaderRoute: typeof ShellScrollRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/search': {
+      id: '/_shell/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof ShellSearchRouteImport
+      parentRoute: typeof ShellRoute
     }
     '/mockup/album': {
       id: '/mockup/album'
@@ -292,11 +527,52 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MockupTrackRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_shell/music/$slug': {
+      id: '/_shell/music/$slug'
+      path: '/music/$slug'
+      fullPath: '/music/$slug'
+      preLoaderRoute: typeof ShellMusicSlugRouteImport
+      parentRoute: typeof ShellRoute
+    }
   }
 }
 
+interface ShellRouteChildren {
+  ShellCreateRoute: typeof ShellCreateRoute
+  ShellDiscoverRoute: typeof ShellDiscoverRoute
+  ShellLibraryRoute: typeof ShellLibraryRoute
+  ShellListenRoute: typeof ShellListenRoute
+  ShellLiveRoute: typeof ShellLiveRoute
+  ShellMessagesRoute: typeof ShellMessagesRoute
+  ShellMoreRoute: typeof ShellMoreRoute
+  ShellNotificationsRoute: typeof ShellNotificationsRoute
+  ShellProfileRoute: typeof ShellProfileRoute
+  ShellScrollRoute: typeof ShellScrollRoute
+  ShellSearchRoute: typeof ShellSearchRoute
+  ShellIndexRoute: typeof ShellIndexRoute
+  ShellMusicSlugRoute: typeof ShellMusicSlugRoute
+}
+
+const ShellRouteChildren: ShellRouteChildren = {
+  ShellCreateRoute: ShellCreateRoute,
+  ShellDiscoverRoute: ShellDiscoverRoute,
+  ShellLibraryRoute: ShellLibraryRoute,
+  ShellListenRoute: ShellListenRoute,
+  ShellLiveRoute: ShellLiveRoute,
+  ShellMessagesRoute: ShellMessagesRoute,
+  ShellMoreRoute: ShellMoreRoute,
+  ShellNotificationsRoute: ShellNotificationsRoute,
+  ShellProfileRoute: ShellProfileRoute,
+  ShellScrollRoute: ShellScrollRoute,
+  ShellSearchRoute: ShellSearchRoute,
+  ShellIndexRoute: ShellIndexRoute,
+  ShellMusicSlugRoute: ShellMusicSlugRoute,
+}
+
+const ShellRouteWithChildren = ShellRoute._addFileChildren(ShellRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  ShellRoute: ShellRouteWithChildren,
   MockupAlbumRoute: MockupAlbumRoute,
   MockupEventsRoute: MockupEventsRoute,
   MockupExploreRoute: MockupExploreRoute,
