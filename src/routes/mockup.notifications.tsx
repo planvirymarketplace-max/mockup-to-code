@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/notifications")({
+export const Route = createFileRoute("/mockup/notifications")({
   head: () => ({
     meta: [
       { title: "Notifications \u2014 ORBIT" },

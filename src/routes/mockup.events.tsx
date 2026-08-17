@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/events")({
+export const Route = createFileRoute("/mockup/events")({
   head: () => ({
     meta: [
       { title: "Events \u2014 ORBIT" },

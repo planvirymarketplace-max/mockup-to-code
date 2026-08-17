@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/album")({
+export const Route = createFileRoute("/mockup/album")({
   head: () => ({
     meta: [
       { title: "Sonic Architecture \u2014 ORBIT" },

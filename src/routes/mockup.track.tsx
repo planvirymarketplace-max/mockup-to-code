@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/track")({
+export const Route = createFileRoute("/mockup/track")({
   head: () => ({
     meta: [
       { title: "Kinetic Resonance \u2014 ORBIT" },

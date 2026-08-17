@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/settings")({
+export const Route = createFileRoute("/mockup/settings")({
   head: () => ({
     meta: [
       { title: "Settings \u2014 ORBIT" },

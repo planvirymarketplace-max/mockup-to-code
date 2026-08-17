@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/live")({
+export const Route = createFileRoute("/mockup/live")({
   head: () => ({
     meta: [
       { title: "Live Stream \u2014 ORBIT" },
