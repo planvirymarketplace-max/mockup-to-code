@@ -10,180 +10,193 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AlbumRouteImport } from './routes/album'
-import { Route as EventsRouteImport } from './routes/events'
-import { Route as ExploreRouteImport } from './routes/explore'
-import { Route as FeedRouteImport } from './routes/feed'
-import { Route as LiveRouteImport } from './routes/live'
-import { Route as MessagesRouteImport } from './routes/messages'
-import { Route as NotificationsRouteImport } from './routes/notifications'
-import { Route as ProfileRouteImport } from './routes/profile'
-import { Route as SettingsRouteImport } from './routes/settings'
-import { Route as StudioRouteImport } from './routes/studio'
-import { Route as TrackRouteImport } from './routes/track'
+import { Route as MockupAlbumRouteImport } from './routes/mockup.album'
+import { Route as MockupEventsRouteImport } from './routes/mockup.events'
+import { Route as MockupExploreRouteImport } from './routes/mockup.explore'
+import { Route as MockupFeedRouteImport } from './routes/mockup.feed'
+import { Route as MockupLiveRouteImport } from './routes/mockup.live'
+import { Route as MockupMessagesRouteImport } from './routes/mockup.messages'
+import { Route as MockupNotificationsRouteImport } from './routes/mockup.notifications'
+import { Route as MockupNowPlayingRouteImport } from './routes/mockup.now-playing'
+import { Route as MockupProfileRouteImport } from './routes/mockup.profile'
+import { Route as MockupSettingsRouteImport } from './routes/mockup.settings'
+import { Route as MockupStudioRouteImport } from './routes/mockup.studio'
+import { Route as MockupTrackRouteImport } from './routes/mockup.track'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AlbumRoute = AlbumRouteImport.update({
-  id: '/album',
-  path: '/album',
+const MockupAlbumRoute = MockupAlbumRouteImport.update({
+  id: '/mockup/album',
+  path: '/mockup/album',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EventsRoute = EventsRouteImport.update({
-  id: '/events',
-  path: '/events',
+const MockupEventsRoute = MockupEventsRouteImport.update({
+  id: '/mockup/events',
+  path: '/mockup/events',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ExploreRoute = ExploreRouteImport.update({
-  id: '/explore',
-  path: '/explore',
+const MockupExploreRoute = MockupExploreRouteImport.update({
+  id: '/mockup/explore',
+  path: '/mockup/explore',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FeedRoute = FeedRouteImport.update({
-  id: '/feed',
-  path: '/feed',
+const MockupFeedRoute = MockupFeedRouteImport.update({
+  id: '/mockup/feed',
+  path: '/mockup/feed',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LiveRoute = LiveRouteImport.update({
-  id: '/live',
-  path: '/live',
+const MockupLiveRoute = MockupLiveRouteImport.update({
+  id: '/mockup/live',
+  path: '/mockup/live',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MessagesRoute = MessagesRouteImport.update({
-  id: '/messages',
-  path: '/messages',
+const MockupMessagesRoute = MockupMessagesRouteImport.update({
+  id: '/mockup/messages',
+  path: '/mockup/messages',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NotificationsRoute = NotificationsRouteImport.update({
-  id: '/notifications',
-  path: '/notifications',
+const MockupNotificationsRoute = MockupNotificationsRouteImport.update({
+  id: '/mockup/notifications',
+  path: '/mockup/notifications',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProfileRoute = ProfileRouteImport.update({
-  id: '/profile',
-  path: '/profile',
+const MockupNowPlayingRoute = MockupNowPlayingRouteImport.update({
+  id: '/mockup/now-playing',
+  path: '/mockup/now-playing',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SettingsRoute = SettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
+const MockupProfileRoute = MockupProfileRouteImport.update({
+  id: '/mockup/profile',
+  path: '/mockup/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StudioRoute = StudioRouteImport.update({
-  id: '/studio',
-  path: '/studio',
+const MockupSettingsRoute = MockupSettingsRouteImport.update({
+  id: '/mockup/settings',
+  path: '/mockup/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TrackRoute = TrackRouteImport.update({
-  id: '/track',
-  path: '/track',
+const MockupStudioRoute = MockupStudioRouteImport.update({
+  id: '/mockup/studio',
+  path: '/mockup/studio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MockupTrackRoute = MockupTrackRouteImport.update({
+  id: '/mockup/track',
+  path: '/mockup/track',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/album': typeof AlbumRoute
-  '/events': typeof EventsRoute
-  '/explore': typeof ExploreRoute
-  '/feed': typeof FeedRoute
-  '/live': typeof LiveRoute
-  '/messages': typeof MessagesRoute
-  '/notifications': typeof NotificationsRoute
-  '/profile': typeof ProfileRoute
-  '/settings': typeof SettingsRoute
-  '/studio': typeof StudioRoute
-  '/track': typeof TrackRoute
+  '/mockup/album': typeof MockupAlbumRoute
+  '/mockup/events': typeof MockupEventsRoute
+  '/mockup/explore': typeof MockupExploreRoute
+  '/mockup/feed': typeof MockupFeedRoute
+  '/mockup/live': typeof MockupLiveRoute
+  '/mockup/messages': typeof MockupMessagesRoute
+  '/mockup/notifications': typeof MockupNotificationsRoute
+  '/mockup/now-playing': typeof MockupNowPlayingRoute
+  '/mockup/profile': typeof MockupProfileRoute
+  '/mockup/settings': typeof MockupSettingsRoute
+  '/mockup/studio': typeof MockupStudioRoute
+  '/mockup/track': typeof MockupTrackRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/album': typeof AlbumRoute
-  '/events': typeof EventsRoute
-  '/explore': typeof ExploreRoute
-  '/feed': typeof FeedRoute
-  '/live': typeof LiveRoute
-  '/messages': typeof MessagesRoute
-  '/notifications': typeof NotificationsRoute
-  '/profile': typeof ProfileRoute
-  '/settings': typeof SettingsRoute
-  '/studio': typeof StudioRoute
-  '/track': typeof TrackRoute
+  '/mockup/album': typeof MockupAlbumRoute
+  '/mockup/events': typeof MockupEventsRoute
+  '/mockup/explore': typeof MockupExploreRoute
+  '/mockup/feed': typeof MockupFeedRoute
+  '/mockup/live': typeof MockupLiveRoute
+  '/mockup/messages': typeof MockupMessagesRoute
+  '/mockup/notifications': typeof MockupNotificationsRoute
+  '/mockup/now-playing': typeof MockupNowPlayingRoute
+  '/mockup/profile': typeof MockupProfileRoute
+  '/mockup/settings': typeof MockupSettingsRoute
+  '/mockup/studio': typeof MockupStudioRoute
+  '/mockup/track': typeof MockupTrackRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/album': typeof AlbumRoute
-  '/events': typeof EventsRoute
-  '/explore': typeof ExploreRoute
-  '/feed': typeof FeedRoute
-  '/live': typeof LiveRoute
-  '/messages': typeof MessagesRoute
-  '/notifications': typeof NotificationsRoute
-  '/profile': typeof ProfileRoute
-  '/settings': typeof SettingsRoute
-  '/studio': typeof StudioRoute
-  '/track': typeof TrackRoute
+  '/mockup/album': typeof MockupAlbumRoute
+  '/mockup/events': typeof MockupEventsRoute
+  '/mockup/explore': typeof MockupExploreRoute
+  '/mockup/feed': typeof MockupFeedRoute
+  '/mockup/live': typeof MockupLiveRoute
+  '/mockup/messages': typeof MockupMessagesRoute
+  '/mockup/notifications': typeof MockupNotificationsRoute
+  '/mockup/now-playing': typeof MockupNowPlayingRoute
+  '/mockup/profile': typeof MockupProfileRoute
+  '/mockup/settings': typeof MockupSettingsRoute
+  '/mockup/studio': typeof MockupStudioRoute
+  '/mockup/track': typeof MockupTrackRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/album'
-    | '/events'
-    | '/explore'
-    | '/feed'
-    | '/live'
-    | '/messages'
-    | '/notifications'
-    | '/profile'
-    | '/settings'
-    | '/studio'
-    | '/track'
+    | '/mockup/album'
+    | '/mockup/events'
+    | '/mockup/explore'
+    | '/mockup/feed'
+    | '/mockup/live'
+    | '/mockup/messages'
+    | '/mockup/notifications'
+    | '/mockup/now-playing'
+    | '/mockup/profile'
+    | '/mockup/settings'
+    | '/mockup/studio'
+    | '/mockup/track'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/album'
-    | '/events'
-    | '/explore'
-    | '/feed'
-    | '/live'
-    | '/messages'
-    | '/notifications'
-    | '/profile'
-    | '/settings'
-    | '/studio'
-    | '/track'
+    | '/mockup/album'
+    | '/mockup/events'
+    | '/mockup/explore'
+    | '/mockup/feed'
+    | '/mockup/live'
+    | '/mockup/messages'
+    | '/mockup/notifications'
+    | '/mockup/now-playing'
+    | '/mockup/profile'
+    | '/mockup/settings'
+    | '/mockup/studio'
+    | '/mockup/track'
   id:
     | '__root__'
     | '/'
-    | '/album'
-    | '/events'
-    | '/explore'
-    | '/feed'
-    | '/live'
-    | '/messages'
-    | '/notifications'
-    | '/profile'
-    | '/settings'
-    | '/studio'
-    | '/track'
+    | '/mockup/album'
+    | '/mockup/events'
+    | '/mockup/explore'
+    | '/mockup/feed'
+    | '/mockup/live'
+    | '/mockup/messages'
+    | '/mockup/notifications'
+    | '/mockup/now-playing'
+    | '/mockup/profile'
+    | '/mockup/settings'
+    | '/mockup/studio'
+    | '/mockup/track'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AlbumRoute: typeof AlbumRoute
-  EventsRoute: typeof EventsRoute
-  ExploreRoute: typeof ExploreRoute
-  FeedRoute: typeof FeedRoute
-  LiveRoute: typeof LiveRoute
-  MessagesRoute: typeof MessagesRoute
-  NotificationsRoute: typeof NotificationsRoute
-  ProfileRoute: typeof ProfileRoute
-  SettingsRoute: typeof SettingsRoute
-  StudioRoute: typeof StudioRoute
-  TrackRoute: typeof TrackRoute
+  MockupAlbumRoute: typeof MockupAlbumRoute
+  MockupEventsRoute: typeof MockupEventsRoute
+  MockupExploreRoute: typeof MockupExploreRoute
+  MockupFeedRoute: typeof MockupFeedRoute
+  MockupLiveRoute: typeof MockupLiveRoute
+  MockupMessagesRoute: typeof MockupMessagesRoute
+  MockupNotificationsRoute: typeof MockupNotificationsRoute
+  MockupNowPlayingRoute: typeof MockupNowPlayingRoute
+  MockupProfileRoute: typeof MockupProfileRoute
+  MockupSettingsRoute: typeof MockupSettingsRoute
+  MockupStudioRoute: typeof MockupStudioRoute
+  MockupTrackRoute: typeof MockupTrackRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -195,81 +208,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/album': {
-      id: '/album'
-      path: '/album'
-      fullPath: '/album'
-      preLoaderRoute: typeof AlbumRouteImport
+    '/mockup/album': {
+      id: '/mockup/album'
+      path: '/mockup/album'
+      fullPath: '/mockup/album'
+      preLoaderRoute: typeof MockupAlbumRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/events': {
-      id: '/events'
-      path: '/events'
-      fullPath: '/events'
-      preLoaderRoute: typeof EventsRouteImport
+    '/mockup/events': {
+      id: '/mockup/events'
+      path: '/mockup/events'
+      fullPath: '/mockup/events'
+      preLoaderRoute: typeof MockupEventsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/explore': {
-      id: '/explore'
-      path: '/explore'
-      fullPath: '/explore'
-      preLoaderRoute: typeof ExploreRouteImport
+    '/mockup/explore': {
+      id: '/mockup/explore'
+      path: '/mockup/explore'
+      fullPath: '/mockup/explore'
+      preLoaderRoute: typeof MockupExploreRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/feed': {
-      id: '/feed'
-      path: '/feed'
-      fullPath: '/feed'
-      preLoaderRoute: typeof FeedRouteImport
+    '/mockup/feed': {
+      id: '/mockup/feed'
+      path: '/mockup/feed'
+      fullPath: '/mockup/feed'
+      preLoaderRoute: typeof MockupFeedRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/live': {
-      id: '/live'
-      path: '/live'
-      fullPath: '/live'
-      preLoaderRoute: typeof LiveRouteImport
+    '/mockup/live': {
+      id: '/mockup/live'
+      path: '/mockup/live'
+      fullPath: '/mockup/live'
+      preLoaderRoute: typeof MockupLiveRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/messages': {
-      id: '/messages'
-      path: '/messages'
-      fullPath: '/messages'
-      preLoaderRoute: typeof MessagesRouteImport
+    '/mockup/messages': {
+      id: '/mockup/messages'
+      path: '/mockup/messages'
+      fullPath: '/mockup/messages'
+      preLoaderRoute: typeof MockupMessagesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/notifications': {
-      id: '/notifications'
-      path: '/notifications'
-      fullPath: '/notifications'
-      preLoaderRoute: typeof NotificationsRouteImport
+    '/mockup/notifications': {
+      id: '/mockup/notifications'
+      path: '/mockup/notifications'
+      fullPath: '/mockup/notifications'
+      preLoaderRoute: typeof MockupNotificationsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/profile': {
-      id: '/profile'
-      path: '/profile'
-      fullPath: '/profile'
-      preLoaderRoute: typeof ProfileRouteImport
+    '/mockup/now-playing': {
+      id: '/mockup/now-playing'
+      path: '/mockup/now-playing'
+      fullPath: '/mockup/now-playing'
+      preLoaderRoute: typeof MockupNowPlayingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/settings': {
-      id: '/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof SettingsRouteImport
+    '/mockup/profile': {
+      id: '/mockup/profile'
+      path: '/mockup/profile'
+      fullPath: '/mockup/profile'
+      preLoaderRoute: typeof MockupProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/studio': {
-      id: '/studio'
-      path: '/studio'
-      fullPath: '/studio'
-      preLoaderRoute: typeof StudioRouteImport
+    '/mockup/settings': {
+      id: '/mockup/settings'
+      path: '/mockup/settings'
+      fullPath: '/mockup/settings'
+      preLoaderRoute: typeof MockupSettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/track': {
-      id: '/track'
-      path: '/track'
-      fullPath: '/track'
-      preLoaderRoute: typeof TrackRouteImport
+    '/mockup/studio': {
+      id: '/mockup/studio'
+      path: '/mockup/studio'
+      fullPath: '/mockup/studio'
+      preLoaderRoute: typeof MockupStudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mockup/track': {
+      id: '/mockup/track'
+      path: '/mockup/track'
+      fullPath: '/mockup/track'
+      preLoaderRoute: typeof MockupTrackRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -277,17 +297,18 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AlbumRoute: AlbumRoute,
-  EventsRoute: EventsRoute,
-  ExploreRoute: ExploreRoute,
-  FeedRoute: FeedRoute,
-  LiveRoute: LiveRoute,
-  MessagesRoute: MessagesRoute,
-  NotificationsRoute: NotificationsRoute,
-  ProfileRoute: ProfileRoute,
-  SettingsRoute: SettingsRoute,
-  StudioRoute: StudioRoute,
-  TrackRoute: TrackRoute,
+  MockupAlbumRoute: MockupAlbumRoute,
+  MockupEventsRoute: MockupEventsRoute,
+  MockupExploreRoute: MockupExploreRoute,
+  MockupFeedRoute: MockupFeedRoute,
+  MockupLiveRoute: MockupLiveRoute,
+  MockupMessagesRoute: MockupMessagesRoute,
+  MockupNotificationsRoute: MockupNotificationsRoute,
+  MockupNowPlayingRoute: MockupNowPlayingRoute,
+  MockupProfileRoute: MockupProfileRoute,
+  MockupSettingsRoute: MockupSettingsRoute,
+  MockupStudioRoute: MockupStudioRoute,
+  MockupTrackRoute: MockupTrackRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
