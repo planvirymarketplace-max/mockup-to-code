@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, type LinkProps } from "@tanstack/react-router";
 import { useShell } from "../state/app-shell";
 import { formatTime, type MediaObject } from "../data/demo";
 
@@ -251,7 +251,7 @@ export function TileLink({
   label,
   hint,
 }: {
-  to: string;
+  to: LinkProps["to"];
   icon: string;
   label: string;
   hint: string;
